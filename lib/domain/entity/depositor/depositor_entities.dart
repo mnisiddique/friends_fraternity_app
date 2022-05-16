@@ -1,6 +1,7 @@
 class DepositorRegistration {
   final String name;
   final String nid;
+  final DateTime firstDepositDate;
   final String mobileNo;
   final bool isActive;
 
@@ -8,6 +9,7 @@ class DepositorRegistration {
     required this.name,
     required this.nid,
     required this.mobileNo,
+    required this.firstDepositDate,
     this.isActive = true,
   });
 }
