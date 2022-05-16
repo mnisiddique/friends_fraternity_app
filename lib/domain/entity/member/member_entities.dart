@@ -1,39 +1,61 @@
-import 'package:flutter/rendering.dart';
-
-class Member {
+class DepositorRegistration {
   final String name;
   final String nid;
   final String mobileNo;
-  final String firstInstallationDate;
-  final bool isMemberActive;
+  final bool isActive;
 
-  Member({
+  DepositorRegistration({
     required this.name,
     required this.nid,
     required this.mobileNo,
-    required this.firstInstallationDate,
-    this.isMemberActive = true,
+    this.isActive = true,
   });
 }
 
-class MemberInstallment {
+class Depositor {
+  final String nid;
+  final String name;
+  final String mobileNo;
+  final DateTime firstDepositDate;
+  final DateTime lastDepositDate;
+  final num totalDeposit;
+  final num totalDepositWithPenalty;
+  final bool isActive;
+
+  Depositor({
+    required this.nid,
+    required this.name,
+    required this.mobileNo,
+    required this.firstDepositDate,
+    required this.lastDepositDate,
+    required this.totalDeposit,
+    required this.totalDepositWithPenalty,
+    required this.isActive,
+  });
+}
+
+class DepositPolicy {
   final num amount;
   final num penalty;
+  final num depositorshipRevocationTimeLimit;
 
-  MemberInstallment({
+  DepositPolicy({
     required this.amount,
     required this.penalty,
+    required this.depositorshipRevocationTimeLimit,
   });
 }
 
-class MemberEmiTotal {
-  final String nid;
-  final num emiTotal;
-  final num emiTotalWithPenalty;
+class EachMonthDeposit {
+  final String depositorNID;
+  final String depositDate;
+  final num depositAmount;
+  final num penalty;
 
-  MemberEmiTotal({
-    required this.nid,
-    required this.emiTotal,
-    required this.emiTotalWithPenalty,
+  EachMonthDeposit({
+    required this.depositorNID,
+    required this.depositDate,
+    required this.depositAmount,
+    required this.penalty,
   });
 }
