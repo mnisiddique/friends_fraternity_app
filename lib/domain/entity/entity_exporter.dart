@@ -1,1 +1,1 @@
-export 'member/member_entities.dart';
+export 'depositor/depositor_entities.dart';
