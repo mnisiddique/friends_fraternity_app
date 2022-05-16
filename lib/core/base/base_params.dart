@@ -1,3 +1,3 @@
-abstract class BaseParams {}
+abstract class Params {}
 
-class NoParams implements BaseParams {}
+class NoParams implements Params {}
