@@ -16,7 +16,7 @@ class FriendsFraternityApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteConfig.generateRoute,
       theme: ThemeData(
-        primarySwatch: ColorRes.pink,
+        primarySwatch: ColorRes.primaryMaterialColor,
       ),
     );
   }
