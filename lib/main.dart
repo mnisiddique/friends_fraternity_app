@@ -17,6 +17,7 @@ class FriendsFraternityApp extends StatelessWidget {
       onGenerateRoute: RouteConfig.generateRoute,
       theme: ThemeData(
         primarySwatch: ColorRes.primaryMaterialColor,
+        fontFamily: "NotoSansBengali",
       ),
     );
   }
