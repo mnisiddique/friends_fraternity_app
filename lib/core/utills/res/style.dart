@@ -6,6 +6,12 @@ class StyleRes {
   static const TextStyle footerTextStyle = const TextStyle(
     fontSize: 12.0,
     color: ColorRes.primaryMaterialColor,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w200,
+  );
+
+  static const TextStyle versionTextStyle = const TextStyle(
+    fontSize: 12.0,
+    color: ColorRes.primaryMaterialColor,
+    fontWeight: FontWeight.w300,
   );
 }

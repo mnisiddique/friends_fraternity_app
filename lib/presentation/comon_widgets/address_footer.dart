@@ -10,7 +10,7 @@ class AddressFooter extends StatelessWidget {
       children: [
         Text(
           StringRes.version,
-          style: StyleRes.footerTextStyle,
+          style: StyleRes.versionTextStyle,
         ),
         Text(
           StringRes.addressLine1,
