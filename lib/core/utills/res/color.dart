@@ -19,4 +19,7 @@ class ColorRes {
       900: Color(0xFFDF0060),
     },
   );
+
+  // static const Color backgroundColor = Color(0xFFF3F8FE);
+  static const Color backgroundColor = Color(0xFFE8F0F0);
 }
