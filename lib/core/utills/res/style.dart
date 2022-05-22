@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:friends_fraternity_app/core/utills/res/resource.dart';
 
 class StyleRes {
@@ -13,5 +13,15 @@ class StyleRes {
     fontSize: 12.0,
     color: ColorRes.primaryMaterialColor,
     fontWeight: FontWeight.w300,
+  );
+  static const TextStyle headerTextStyle = const TextStyle(
+    fontSize: 20.0,
+    color: ColorRes.primaryMaterialColor,
+    fontWeight: FontWeight.w700,
+  );
+  static const TextStyle headerSubTitleTextStyle = const TextStyle(
+    fontSize: 16.0,
+    color: ColorRes.primaryMaterialColor,
+    fontWeight: FontWeight.w500,
   );
 }

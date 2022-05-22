@@ -5,7 +5,19 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RootWidget(
+      rootWidgetBody: _makeScreenContent(),
       footer: AddressFooter(),
+    );
+  }
+
+  Widget _makeScreenContent() {
+    return Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Header(),
+        ],
+      ),
     );
   }
 }
