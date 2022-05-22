@@ -14,8 +14,11 @@ class LoginScreen extends StatelessWidget {
     return Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Header(),
+          SizedBox(height: 96.0),
+          LoginForm(),
         ],
       ),
     );

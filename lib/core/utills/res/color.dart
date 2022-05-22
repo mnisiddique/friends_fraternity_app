@@ -22,4 +22,7 @@ class ColorRes {
 
   // static const Color backgroundColor = Color(0xFFF3F8FE);
   static const Color backgroundColor = Color(0xFFE8F0F0);
+  static const Color shadowColor = Color.fromARGB(255, 190, 209, 209);
+  static const Color textColor = primaryMaterialColor;
+  // static const Color textColor = Color(0xFF003663);
 }
