@@ -61,3 +61,20 @@ class EachMonthDeposit {
     required this.penalty,
   });
 }
+
+class DepositorshipCancelStatus {
+  final bool isCancelled;
+  final String message;
+
+  DepositorshipCancelStatus(this.isCancelled, this.message);
+}
+
+class DepositorshipObservation {
+  final List<Depositor> observedDepositors;
+  final List<String> cancelledDepositors;
+
+  DepositorshipObservation({
+    required this.observedDepositors,
+    required this.cancelledDepositors,
+  });
+}
