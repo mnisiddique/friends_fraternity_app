@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:friends_fraternity_app/core/utills/dependency.dart';
 import 'package:friends_fraternity_app/core/utills/navigation/route_config.dart';
 import 'package:friends_fraternity_app/core/utills/res/resource.dart';
 
 void main() {
+  Dependency.initDependency();
   runApp(const FriendsFraternityApp());
 }
 
