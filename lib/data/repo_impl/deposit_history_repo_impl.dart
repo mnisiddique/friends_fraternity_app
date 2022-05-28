@@ -6,16 +6,16 @@ import 'package:friends_fraternity_app/domain/repository/repository.dart';
 
 class DepositHistoryRepoImpl implements DepositHistoryRepo {
   final DepositorHistoryRemote depositorHistoryRemote;
-  final NetworkInfo noInternetExceptionThrower;
+  final NetworkInfo networkInfo;
 
   DepositHistoryRepoImpl({
     required this.depositorHistoryRemote,
-    required this.noInternetExceptionThrower,
+    required this.networkInfo,
   });
 
   @override
   Future<List<EachMonthDeposit>> getPersonDepositHistory(Params param) async {
-    await noInternetExceptionThrower.throwIfNoInternet();
+    await networkInfo.throwIfNoInternet();
     return await depositorHistoryRemote(param);
   }
 }
