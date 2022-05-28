@@ -1,0 +1,14 @@
+[
+    {
+  "depositorNID": "1010202066",
+  "depositDate": "01-01-2022",
+  "depositAmount": 1000.00,
+  "penalty": 200.00
+    },
+    {
+  "depositorNID": "1010202066",
+  "depositDate": "01-02-2022",
+  "depositAmount": 1000,
+  "penalty": 0.00
+    }
+]
