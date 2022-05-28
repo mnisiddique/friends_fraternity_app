@@ -15,7 +15,7 @@ class Dependency {
 
     sl.registerLazySingleton<DepositHistoryRepoImpl>(
       () => DepositHistoryRepoImpl(
-        depositorHistoryRemote: sl(),
+        depositHistoryRemote: sl(),
         networkInfo: sl(),
       ),
     );

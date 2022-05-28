@@ -10,8 +10,7 @@ import 'package:mockito/mockito.dart';
 
 import '../../../fixture/fixture_reader.dart';
 
-class MockDepositorHistoryRemote extends Mock
-    implements DepositorHistoryRemote {}
+class MockDepositorHistoryRemote extends Mock implements DepositHistoryRemote {}
 
 class MockNetoworkInfo extends Mock implements NetworkInfo {}
 
@@ -24,7 +23,7 @@ void main() {
     _mockDepositHistoryRemote = MockDepositorHistoryRemote();
     _mockNetoworkInfo = MockNetoworkInfo();
     _depositorHistoryRepo = DepositHistoryRepoImpl(
-      depositorHistoryRemote: _mockDepositHistoryRemote,
+      depositHistoryRemote: _mockDepositHistoryRemote,
       networkInfo: _mockNetoworkInfo,
     );
   });
