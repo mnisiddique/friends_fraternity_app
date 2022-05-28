@@ -30,9 +30,7 @@ void main() {
         //act
         try {
           await _networkInfo.throwIfNoInternet();
-        } on Exception catch (e) {
-          // TODO
-        }
+        } on Exception {}
 
         //assert
         verify(_mockInternetConnectionChecker.hasConnection);
