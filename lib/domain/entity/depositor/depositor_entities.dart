@@ -1,4 +1,6 @@
-class DepositorRegistration {
+import 'package:equatable/equatable.dart';
+
+class DepositorRegistration extends Equatable {
   final String name;
   final String nid;
   final DateTime firstDepositDate;
@@ -12,9 +14,18 @@ class DepositorRegistration {
     required this.firstDepositDate,
     this.isActive = true,
   });
+
+  @override
+  List<Object?> get props => [
+        name,
+        nid,
+        mobileNo,
+        firstDepositDate,
+        isActive,
+      ];
 }
 
-class Depositor {
+class Depositor extends Equatable {
   final String nid;
   final String name;
   final String mobileNo;
@@ -34,9 +45,21 @@ class Depositor {
     required this.totalDepositWithPenalty,
     required this.isActive,
   });
+
+  @override
+  List<Object?> get props => [
+        nid,
+        name,
+        mobileNo,
+        firstDepositDate,
+        lastDepositDate,
+        totalDeposit,
+        totalDepositWithPenalty,
+        isActive
+      ];
 }
 
-class DepositPolicy {
+class DepositPolicy extends Equatable {
   final num amount;
   final num penalty;
   final num depositorshipRevocationTimeLimit;
@@ -46,9 +69,16 @@ class DepositPolicy {
     required this.penalty,
     required this.depositorshipRevocationTimeLimit,
   });
+
+  @override
+  List<Object?> get props => [
+        amount,
+        penalty,
+        depositorshipRevocationTimeLimit,
+      ];
 }
 
-class EachMonthDeposit {
+class EachMonthDeposit extends Equatable {
   final String depositorNID;
   final String depositDate;
   final num depositAmount;
@@ -60,16 +90,27 @@ class EachMonthDeposit {
     required this.depositAmount,
     required this.penalty,
   });
+
+  @override
+  List<Object?> get props => [
+        depositorNID,
+        depositDate,
+        depositAmount,
+        penalty,
+      ];
 }
 
-class DepositorshipCancelStatus {
+class DepositorshipCancelStatus extends Equatable {
   final bool isCancelled;
   final String message;
 
   DepositorshipCancelStatus(this.isCancelled, this.message);
+
+  @override
+  List<Object?> get props => [isCancelled, message];
 }
 
-class DepositorshipObservation {
+class DepositorshipObservation extends Equatable {
   final List<Depositor> observedDepositors;
   final List<String> cancelledDepositors;
 
@@ -77,4 +118,7 @@ class DepositorshipObservation {
     required this.observedDepositors,
     required this.cancelledDepositors,
   });
+
+  @override
+  List<Object?> get props => [observedDepositors, cancelledDepositors];
 }
