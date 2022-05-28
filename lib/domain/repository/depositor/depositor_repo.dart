@@ -1,4 +1,4 @@
-import 'package:friends_fraternity_app/core/base/base_exporter.dart';
+import 'package:friends_fraternity_app/core/params/param_exporter.dart';
 import 'package:friends_fraternity_app/domain/entity/depositor/depositor_entities.dart';
 
 abstract class DepositHistoryRepo {
