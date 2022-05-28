@@ -1,8 +1,9 @@
 import 'package:friends_fraternity_app/core/params/param_exporter.dart';
+import 'package:friends_fraternity_app/data/model/model.dart';
 import 'package:friends_fraternity_app/domain/entity/depositor/depositor_entities.dart';
 
 abstract class DepositHistoryRepo {
-  Future<List<EachMonthDeposit>> getPersonDepositHistory(Params param);
+  Future<EachMonthDepositListModel> getPersonDepositHistory(Params param);
 }
 
 abstract class DepositorshipObserverRepo {

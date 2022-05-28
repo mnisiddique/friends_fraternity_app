@@ -1,13 +1,13 @@
 import 'package:friends_fraternity_app/core/params/param_exporter.dart';
-import 'package:friends_fraternity_app/domain/entity/entity_exporter.dart';
+import 'package:friends_fraternity_app/data/model/model.dart';
 
 abstract class DepositorHistoryRemote {
-  Future<List<EachMonthDeposit>> call(Params params);
+  Future<EachMonthDepositListModel> call(Params params);
 }
 
 class DepositorHistoryRemoteImpl implements DepositorHistoryRemote {
   @override
-  Future<List<EachMonthDeposit>> call(Params param) {
+  Future<EachMonthDepositListModel> call(Params param) {
     // TODO: implement call
     throw UnimplementedError();
   }
