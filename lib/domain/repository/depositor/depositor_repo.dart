@@ -7,7 +7,7 @@ abstract class DepositHistoryRepo {
 }
 
 abstract class DepositorshipObserverRepo {
-  Future<Depositor> getDepositors(Params param);
+  Future<DepositorListModel> getDepositors(Params param);
   DepositorshipObservation observeDepositorship(Params param);
   Future<DepositorshipCancelStatus> cancelDepositorship(Params param);
 }
