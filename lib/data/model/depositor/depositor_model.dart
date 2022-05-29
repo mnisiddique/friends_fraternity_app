@@ -29,6 +29,33 @@ class DepositorModel extends Depositor {
           isActive: isActive,
         );
 
+  DepositorModel copyWith({
+    String? nid,
+    String? name,
+    String? mobileNo,
+    DateTime? firstDepositDate,
+    DateTime? lastDepositDate,
+    num? totalDeposit,
+    num? totalDepositWithPenalty,
+    bool? isActive,
+    int? dueMonths,
+    int? monthsDepositInAdvance,
+  }) {
+    return DepositorModel(
+      nid: nid ?? this.nid,
+      name: name ?? this.name,
+      mobileNo: mobileNo ?? this.mobileNo,
+      firstDepositDate: firstDepositDate ?? this.firstDepositDate,
+      lastDepositDate: lastDepositDate ?? this.lastDepositDate,
+      totalDeposit: totalDeposit ?? this.totalDeposit,
+      totalDepositWithPenalty: totalDepositWithPenalty ?? this.totalDeposit,
+      isActive: isActive ?? this.isActive,
+      dueMonths: dueMonths ?? this.dueMonths,
+      monthsDepositInAdvance:
+          monthsDepositInAdvance ?? this.monthsDepositInAdvance,
+    );
+  }
+
   factory DepositorModel.fromJson(String stringResp) {
     final Map<String, dynamic> decodedJson = json.decode(stringResp);
     return DepositorModel(
