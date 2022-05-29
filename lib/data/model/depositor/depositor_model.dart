@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:friends_fraternity_app/core/params/params.dart';
 import 'package:friends_fraternity_app/domain/entity/entity_exporter.dart';
 
 class DepositorModel extends Depositor {
@@ -25,4 +28,63 @@ class DepositorModel extends Depositor {
           totalDepositWithPenalty: totalDepositWithPenalty,
           isActive: isActive,
         );
+
+  factory DepositorModel.fromJson(String stringResp) {
+    final Map<String, dynamic> decodedJson = json.decode(stringResp);
+    return DepositorModel(
+      nid: decodedJson["nid"],
+      name: decodedJson["name"],
+      mobileNo: decodedJson["mobileNo"],
+      firstDepositDate: decodedJson["firstDepositDate"],
+      lastDepositDate: decodedJson["lastDepositDate"],
+      totalDeposit: decodedJson["totalDeposit"],
+      totalDepositWithPenalty: decodedJson["totalDepositWithPenalty"],
+      isActive: decodedJson["isActive"],
+      dueMonths: decodedJson["dueMonths"],
+      monthsDepositInAdvance: decodedJson["monthsDepositInAdvance"],
+    );
+  }
+
+  factory DepositorModel.fromMap(Map<String, dynamic> decodedJson) {
+    return DepositorModel(
+      nid: decodedJson["nid"],
+      name: decodedJson["name"],
+      mobileNo: decodedJson["mobileNo"],
+      firstDepositDate: decodedJson["firstDepositDate"],
+      lastDepositDate: decodedJson["lastDepositDate"],
+      totalDeposit: decodedJson["totalDeposit"],
+      totalDepositWithPenalty: decodedJson["totalDepositWithPenalty"],
+      isActive: decodedJson["isActive"],
+      dueMonths: decodedJson["dueMonths"],
+      monthsDepositInAdvance: decodedJson["monthsDepositInAdvance"],
+    );
+  }
+
+  String toJson() {
+    return json.encode({
+      "nid": this.nid,
+      "name": this.name,
+      "mobileNo": this.mobileNo,
+      "firstDepositDate": this.firstDepositDate,
+      "lastDepositDate": this.lastDepositDate,
+      "totalDeposit": this.totalDeposit,
+      "totalDepositWithPenalty": this.totalDepositWithPenalty,
+      "isActive": this.isActive,
+      "dueMonths": this.dueMonths,
+      "monthsDepositInAdvance": this.monthsDepositInAdvance,
+    });
+  }
+}
+
+class DepositorListModel implements Params {
+  final List<DepositorModel> depositors;
+
+  DepositorListModel(this.depositors);
+
+  factory DepositorListModel.fromJson(String jsonResp) {
+    final List<dynamic> decodedJson = json.decode(jsonResp);
+    return DepositorListModel(
+      decodedJson.map((mapItem) => DepositorModel.fromMap(mapItem)).toList(),
+    );
+  }
 }
