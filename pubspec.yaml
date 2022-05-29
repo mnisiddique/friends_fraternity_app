@@ -37,6 +37,8 @@ dependencies:
   internet_connection_checker: ^0.0.1+4
   get_it: ^7.2.0
   equatable: ^2.0.3
+  sqflite: ^2.0.2+1
+  shared_preferences: ^2.0.15
   
 
 dev_dependencies:
