@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:friends_fraternity_app/core/error/exception.dart';
 import 'package:friends_fraternity_app/core/network/network_info.dart';
-import 'package:friends_fraternity_app/core/params/param_exporter.dart';
+import 'package:friends_fraternity_app/core/params/export_param.dart';
 import 'package:friends_fraternity_app/data/data_source/export_datasrc.dart';
 import 'package:friends_fraternity_app/data/model/model.dart';
-import 'package:friends_fraternity_app/data/repo_impl/repo_impl_exporter.dart';
-import 'package:friends_fraternity_app/domain/repository/repository.dart';
+import 'package:friends_fraternity_app/data/repo_impl/export_repo_impl.dart';
+import 'package:friends_fraternity_app/domain/repository/export_repo.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../../fixture/fixture_reader.dart';

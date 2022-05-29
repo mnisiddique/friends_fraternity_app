@@ -1,4 +1,4 @@
-import 'package:friends_fraternity_app/core/params/param_exporter.dart';
+import 'package:friends_fraternity_app/core/params/export_param.dart';
 import 'package:friends_fraternity_app/data/model/model.dart';
 
 abstract class DepositorListLocal {

@@ -1,11 +1,10 @@
 import 'package:friends_fraternity_app/core/local_datasource/export_core_local_datasrc.dart';
 import 'package:friends_fraternity_app/core/network/network_info.dart';
-import 'package:friends_fraternity_app/core/utills/date_time/date_difference_calculator.dart';
 import 'package:friends_fraternity_app/data/data_source/export_datasrc.dart';
 import 'package:friends_fraternity_app/data/model/model.dart';
 import 'package:friends_fraternity_app/domain/entity/depositor/depositor_entities.dart';
 import 'package:friends_fraternity_app/core/params/params.dart';
-import 'package:friends_fraternity_app/domain/repository/repository.dart';
+import 'package:friends_fraternity_app/domain/repository/export_repo.dart';
 
 class DepositorshipObserverRepoImpl implements DepositorRepo {
   final NetworkInfo networkInfo;

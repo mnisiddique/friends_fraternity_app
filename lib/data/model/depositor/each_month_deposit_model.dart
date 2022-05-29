@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:friends_fraternity_app/domain/entity/entity_exporter.dart';
+import 'package:friends_fraternity_app/domain/entity/export_entity.dart';
 
 class EachMonthDepositModel extends EachMonthDeposit {
   EachMonthDepositModel({
