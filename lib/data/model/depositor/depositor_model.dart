@@ -3,10 +3,7 @@ import 'dart:convert';
 import 'package:friends_fraternity_app/core/params/params.dart';
 import 'package:friends_fraternity_app/domain/entity/export_entity.dart';
 
-class DepositorModel extends Depositor {
-  final int dueMonths;
-  final int monthsDepositInAdvance;
-
+class DepositorModel extends Depositor implements Params {
   DepositorModel({
     required String nid,
     required String name,
@@ -16,8 +13,8 @@ class DepositorModel extends Depositor {
     required num totalDeposit,
     required num totalDepositWithPenalty,
     required bool isActive,
-    required this.dueMonths,
-    required this.monthsDepositInAdvance,
+    required int dueMonths,
+    required int monthsDepositInAdvance,
   }) : super(
           nid: nid,
           name: name,
@@ -26,6 +23,8 @@ class DepositorModel extends Depositor {
           lastDepositDate: lastDepositDate,
           totalDeposit: totalDeposit,
           totalDepositWithPenalty: totalDepositWithPenalty,
+          dueMonths: dueMonths,
+          monthsDepositInAdvance: monthsDepositInAdvance,
           isActive: isActive,
         );
 

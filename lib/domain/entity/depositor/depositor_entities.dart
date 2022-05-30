@@ -26,6 +26,8 @@ class DepositorRegistration extends Equatable {
 }
 
 class Depositor extends Equatable {
+  final int dueMonths;
+  final int monthsDepositInAdvance;
   final String nid;
   final String name;
   final String mobileNo;
@@ -44,6 +46,8 @@ class Depositor extends Equatable {
     required this.totalDeposit,
     required this.totalDepositWithPenalty,
     required this.isActive,
+    required this.dueMonths,
+    required this.monthsDepositInAdvance,
   });
 
   @override
