@@ -9,4 +9,6 @@ class StringRes {
   static const String labelMobileNoHint = "01XXXXXXXXX";
   static const String labelPassword = "পাসওয়ার্ড";
   static const String labelLogin = "লগইন";
+  static const String invalidDateInputMsg =
+      "[toDate] must be greater than [fromDate]";
 }
