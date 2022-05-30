@@ -31,8 +31,8 @@ class Depositor extends Equatable {
   final String nid;
   final String name;
   final String mobileNo;
-  final DateTime firstDepositDate;
-  final DateTime lastDepositDate;
+  final String firstDepositDate;
+  final String lastDepositDate;
   final num totalDeposit;
   final num totalDepositWithPenalty;
   final bool isActive;
