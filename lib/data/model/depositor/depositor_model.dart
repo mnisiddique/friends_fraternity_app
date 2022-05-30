@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:friends_fraternity_app/core/params/params.dart';
 import 'package:friends_fraternity_app/domain/entity/export_entity.dart';
 
-class DepositorModel extends Depositor implements TimelineParam {
+class DepositorModel extends Depositor implements Params {
   DepositorModel({
     required String nid,
     required String name,
@@ -100,15 +100,6 @@ class DepositorModel extends Depositor implements TimelineParam {
       "monthsDepositInAdvance": this.monthsDepositInAdvance,
     });
   }
-
-  @override
-  String get firstDate => firstDepositDate;
-
-  @override
-  String get lastDate => lastDepositDate;
-
-  @override
-  num get totalAmount => totalDeposit;
 }
 
 class DepositorListModel implements Params {
