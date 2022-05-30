@@ -3,13 +3,13 @@ import 'dart:convert';
 import 'package:friends_fraternity_app/core/params/params.dart';
 import 'package:friends_fraternity_app/domain/entity/export_entity.dart';
 
-class DepositorModel extends Depositor implements Params {
+class DepositorModel extends Depositor implements TimelineParam {
   DepositorModel({
     required String nid,
     required String name,
     required String mobileNo,
-    required DateTime firstDepositDate,
-    required DateTime lastDepositDate,
+    required String firstDepositDate,
+    required String lastDepositDate,
     required num totalDeposit,
     required num totalDepositWithPenalty,
     required bool isActive,
@@ -32,8 +32,8 @@ class DepositorModel extends Depositor implements Params {
     String? nid,
     String? name,
     String? mobileNo,
-    DateTime? firstDepositDate,
-    DateTime? lastDepositDate,
+    String? firstDepositDate,
+    String? lastDepositDate,
     num? totalDeposit,
     num? totalDepositWithPenalty,
     bool? isActive,
@@ -100,6 +100,15 @@ class DepositorModel extends Depositor implements Params {
       "monthsDepositInAdvance": this.monthsDepositInAdvance,
     });
   }
+
+  @override
+  String get firstDate => firstDepositDate;
+
+  @override
+  String get lastDate => lastDepositDate;
+
+  @override
+  num get totalAmount => totalDeposit;
 }
 
 class DepositorListModel implements Params {
