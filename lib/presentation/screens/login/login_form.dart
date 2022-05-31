@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:friends_fraternity_app/core/utills/res/resource.dart';
+import 'package:friends_fraternity_app/presentation/cubit/export_cubit.dart';
 import 'package:friends_fraternity_app/presentation/widget_exporter.dart';
 
 class LoginForm extends StatelessWidget {
@@ -14,25 +16,62 @@ class LoginForm extends StatelessWidget {
           SizedBox(height: 24.0),
           _passwordField(),
           SizedBox(height: 20.0),
-          LoginButton(onTap: () {}, height: 42.0),
+          _loginButton(),
+          // LoginButton(
+          //     onTap: BlocProvider.of<LoginFormCubit>(context).doLogin,
+          //     height: 42.0),
         ],
       ),
     );
   }
 
   Widget _userIdField() {
-    return UserIdField(
-      label: StringRes.labelMobileNo,
-      hintText: StringRes.labelMobileNoHint,
-      prefixIcon: Icons.phone_android,
+    return BlocSelector<LoginFormCubit, LoginFormState, String>(
+      selector: (state) {
+        print(state.runtimeType);
+        return state.userId;
+      },
+      builder: (context, userName) {
+        print("Building userid");
+        return UserIdField(
+          onChange: BlocProvider.of<LoginFormCubit>(context).onUserIdChange,
+          label: StringRes.labelMobileNo,
+          hintText: StringRes.labelMobileNoHint,
+          prefixIcon: Icons.phone_android,
+        );
+      },
     );
   }
 
   Widget _passwordField() {
-    return UserIdField(
-      label: StringRes.labelPassword,
-      hintText: StringRes.labelPassword,
-      prefixIcon: Icons.lock,
+    return BlocSelector<LoginFormCubit, LoginFormState, String>(
+      selector: (state) {
+        print(state.runtimeType);
+        return state.password;
+      },
+      builder: (context, pwd) {
+        print("Building pwd");
+        return UserIdField(
+          onChange: BlocProvider.of<LoginFormCubit>(context).onPwdChange,
+          label: StringRes.labelPassword,
+          hintText: StringRes.labelPassword,
+          prefixIcon: Icons.lock,
+        );
+      },
     );
+  }
+
+  Widget _loginButton() {
+    return BlocSelector<LoginFormCubit, LoginFormState, bool>(
+        selector: (state) => state.formStatus,
+        builder: (context, status) {
+          return Visibility(
+            visible: status,
+            child: LoginButton(
+              onTap: BlocProvider.of<LoginFormCubit>(context).doLogin,
+              height: 42.0,
+            ),
+          );
+        });
   }
 }

@@ -6,12 +6,14 @@ class UserIdField extends StatefulWidget {
   final String? label;
   final String? hintText;
   final IconData? prefixIcon;
+  final Function(String)? onChange;
 
   const UserIdField({
     Key? key,
     this.label,
     this.hintText,
     this.prefixIcon,
+    this.onChange,
   }) : super(key: key);
 
   @override
@@ -85,6 +87,7 @@ class _UserIdFieldState extends State<UserIdField> {
         SizedBox(width: 8.0),
         Expanded(
           child: TextField(
+            onChanged: widget.onChange,
             focusNode: _focusNode,
             keyboardType: TextInputType.phone,
             style: StyleRes.textStyleTextField,
