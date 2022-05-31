@@ -1,5 +1,4 @@
 import 'package:friends_fraternity_app/core/params/export_param.dart';
-import 'package:friends_fraternity_app/core/repo/timeline_observer_repo.dart';
 import 'package:friends_fraternity_app/data/model/model.dart';
 import 'package:friends_fraternity_app/domain/entity/depositor/depositor_entities.dart';
 
@@ -13,7 +12,7 @@ abstract class DepositorRepo {
   Future<DepositorshipCancelStatus> cancelDepositorship(Params param);
 }
 
-abstract class DepositorTimelineObserverRepo extends TimelineObserverRepo {
+abstract class DepositorTimelineObserverRepo {
   DepositorshipObservation observeDepositorTimeline(Params param);
 }
 
