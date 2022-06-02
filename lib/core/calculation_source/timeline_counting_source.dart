@@ -7,16 +7,16 @@ abstract class TimelineCountingSource {
   int countAdvanceMonth(Params params);
 }
 
-class TimelineCalculationSourceImpl implements TimelineCountingSource {
+class TimelineCountingSourceSourceImpl implements TimelineCountingSource {
   final DateIntervalCounter _dateIntervalCounter;
 
-  TimelineCalculationSourceImpl(this._dateIntervalCounter);
+  TimelineCountingSourceSourceImpl(this._dateIntervalCounter);
   @override
   int countDueMonth(Params params) {
     final TimelineModel timelineModel = params as TimelineModel;
     final int dueMonth = _dateIntervalCounter.countIntervalInMonth(
-      timelineModel.firstDate,
       timelineModel.lastDate,
+      timelineModel.currentDate,
     );
     return dueMonth > 0 ? dueMonth - 1 : 0;
   }
