@@ -8,7 +8,6 @@ abstract class DepositHistoryRepo {
 
 abstract class DepositorRepo {
   Future<DepositorListModel> getDepositors(Params param);
-
   Future<DepositorshipCancelStatus> cancelDepositorship(Params param);
 }
 
@@ -20,4 +19,8 @@ abstract class DepositRepo {
   //TODO exact return type will be decided later
   Future<void> doDeposit(Params param);
   Future<Depositor> workOutExpectedDeposit(Params param);
+}
+
+abstract class DepositPolicyRepo {
+  Future<DepositPolicy> getDepositPolicy(Params param);
 }
