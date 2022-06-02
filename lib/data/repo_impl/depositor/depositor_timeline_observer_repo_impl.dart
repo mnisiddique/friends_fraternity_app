@@ -1,6 +1,7 @@
 import 'package:friends_fraternity_app/core/calculation_source/export_core_counting_source.dart';
 import 'package:friends_fraternity_app/core/local_datasource/shared_preference/current_date_local_source.dart';
 import 'package:friends_fraternity_app/core/model/export_core_model.dart';
+import 'package:friends_fraternity_app/data/data_source/export_datasrc.dart';
 import 'package:friends_fraternity_app/data/model/model.dart';
 import 'package:friends_fraternity_app/domain/entity/depositor/depositor_entities.dart';
 import 'package:friends_fraternity_app/core/params/params.dart';
@@ -10,10 +11,12 @@ class DepositorTimelineObserverRepoImpl
     implements DepositorTimelineObserverRepo {
   final TimelineCountingSourceSourceImpl timelineCountingSrc;
   final CurrentDateLocalSource localDateSrc;
+  final DepositPolicySrc policyLocal;
 
   DepositorTimelineObserverRepoImpl({
     required this.timelineCountingSrc,
     required this.localDateSrc,
+    required this.policyLocal,
   });
 
   @override
@@ -35,18 +38,20 @@ class DepositorTimelineObserverRepoImpl
   }
 
   DepositorModel observe(DepositorModel depositor) {
+    DepositPolicy policy = policyLocal.retrieveDepositPolicy();
     final timeline = TimelineModel(
       firstDate: depositor.firstDepositDate,
       lastDate: depositor.lastDepositDate,
       currentDate: localDateSrc.getCurrentDate(),
-      timelineInMonth: 3,
-      monthlyPayment: 0,
+      timelineInMonth: policy.depositorshipRevocationTimeLimit,
+      monthlyPayment: policy.amount,
       totalPayedAmount: depositor.totalDeposit,
     );
     final dueMonth = timelineCountingSrc.countDueMonth(timeline);
     return depositor.copyWith(
-        dueMonths: dueMonth,
-        monthsDepositInAdvance: timelineCountingSrc.countAdvanceMonth(timeline),
-        isActive: dueMonth >= 3);
+      dueMonths: dueMonth,
+      monthsDepositInAdvance: timelineCountingSrc.countAdvanceMonth(timeline),
+      isActive: dueMonth >= policy.depositorshipRevocationTimeLimit,
+    );
   }
 }

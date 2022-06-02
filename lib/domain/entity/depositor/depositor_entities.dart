@@ -66,7 +66,7 @@ class Depositor extends Equatable {
 class DepositPolicy extends Equatable {
   final num amount;
   final num penalty;
-  final num depositorshipRevocationTimeLimit;
+  final int depositorshipRevocationTimeLimit;
 
   DepositPolicy({
     required this.amount,

@@ -22,5 +22,5 @@ abstract class DepositRepo {
 }
 
 abstract class DepositPolicyRepo {
-  Future<DepositPolicy> getDepositPolicy(Params param);
+  Future<bool> getDepositPolicy(Params param);
 }
