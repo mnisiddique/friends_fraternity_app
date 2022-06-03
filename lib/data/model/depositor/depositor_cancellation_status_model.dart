@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:friends_fraternity_app/domain/entity/export_entity.dart';
+import 'package:friends_fraternity_app/domain/export_entity.dart';
 
 class DepositorshipCancelStatusModel extends DepositorshipCancelStatus {
   DepositorshipCancelStatusModel(bool isCancelled, String message)

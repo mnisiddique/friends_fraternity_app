@@ -1,5 +1,5 @@
 import 'package:friends_fraternity_app/data/export_model.dart';
-import 'package:friends_fraternity_app/domain/entity/export_entity.dart';
+import 'package:friends_fraternity_app/domain/export_entity.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class DepositPolicySrc {
