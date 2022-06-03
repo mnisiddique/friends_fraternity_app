@@ -1,5 +1,5 @@
-export 'package:friends_fraternity_app/data/common/datasrc/local/shared_preference/current_date_local_source.dart';
-export 'package:friends_fraternity_app/data/common/datasrc/local/shared_preference/source_preference.dart';
+export 'package:friends_fraternity_app/data/data_source/local/common/shared_preference/current_date_local_source.dart';
+export 'package:friends_fraternity_app/data/data_source/local/common/shared_preference/source_preference.dart';
 
 export "package:friends_fraternity_app/data/data_source/remote/depositor/depositor_history_remote.dart";
 export "package:friends_fraternity_app/data/data_source/remote/depositor/depositorship_observation_remote/depositor_list_remote.dart";
