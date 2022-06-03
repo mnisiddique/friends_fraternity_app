@@ -1,7 +1,7 @@
 import 'package:friends_fraternity_app/core/network/network_info.dart';
 import 'package:friends_fraternity_app/core/params/params.dart';
-import 'package:friends_fraternity_app/data/data_source/export_datasrc.dart';
-import 'package:friends_fraternity_app/domain/repository/export_repo.dart';
+import 'package:friends_fraternity_app/data/export_datasrc.dart';
+import 'package:friends_fraternity_app/domain/export_repository.dart';
 
 class DepositPolicyRepoImpl implements DepositPolicyRepo {
   final DepositPolicySrc policyLocal;

@@ -1,5 +1,5 @@
 import 'package:friends_fraternity_app/core/params/params.dart';
-import 'package:friends_fraternity_app/data/model/model.dart';
+import 'package:friends_fraternity_app/data/export_model.dart';
 
 abstract class DepositorListRemote {
   Future<DepositorListModel> call(Params params);

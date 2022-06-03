@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:friends_fraternity_app/presentation/widget_exporter.dart';
+import 'package:friends_fraternity_app/presentation/export_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   @override

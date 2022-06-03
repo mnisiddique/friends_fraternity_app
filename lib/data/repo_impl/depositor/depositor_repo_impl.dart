@@ -1,10 +1,9 @@
-import 'package:friends_fraternity_app/core/local_datasource/export_core_local_datasrc.dart';
+import 'package:friends_fraternity_app/data/export_datasrc.dart';
 import 'package:friends_fraternity_app/core/network/network_info.dart';
-import 'package:friends_fraternity_app/data/data_source/export_datasrc.dart';
-import 'package:friends_fraternity_app/data/model/model.dart';
+import 'package:friends_fraternity_app/data/export_model.dart';
 import 'package:friends_fraternity_app/domain/entity/depositor/depositor_entities.dart';
 import 'package:friends_fraternity_app/core/params/params.dart';
-import 'package:friends_fraternity_app/domain/repository/export_repo.dart';
+import 'package:friends_fraternity_app/domain/export_repository.dart';
 
 class DepositorshipObserverRepoImpl implements DepositorRepo {
   final NetworkInfo networkInfo;

@@ -1,11 +1,9 @@
 import 'package:friends_fraternity_app/core/calculation_source/export_core_counting_source.dart';
-import 'package:friends_fraternity_app/core/local_datasource/shared_preference/current_date_local_source.dart';
-import 'package:friends_fraternity_app/core/model/export_core_model.dart';
-import 'package:friends_fraternity_app/data/data_source/export_datasrc.dart';
-import 'package:friends_fraternity_app/data/model/model.dart';
+import 'package:friends_fraternity_app/data/export_datasrc.dart';
+import 'package:friends_fraternity_app/data/export_model.dart';
 import 'package:friends_fraternity_app/domain/entity/depositor/depositor_entities.dart';
 import 'package:friends_fraternity_app/core/params/params.dart';
-import 'package:friends_fraternity_app/domain/repository/export_repo.dart';
+import 'package:friends_fraternity_app/domain/export_repository.dart';
 
 class DepositorTimelineObserverRepoImpl
     implements DepositorTimelineObserverRepo {

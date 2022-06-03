@@ -1,5 +1,5 @@
 import 'package:friends_fraternity_app/core/params/export_param.dart';
-import 'package:friends_fraternity_app/data/model/model.dart';
+import 'package:friends_fraternity_app/data/export_model.dart';
 
 abstract class DepositorshipCancelLocal {
   Future<DepositorshipCancelStatusModel> call(Params params);

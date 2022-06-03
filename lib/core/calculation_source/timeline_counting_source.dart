@@ -1,6 +1,6 @@
-import 'package:friends_fraternity_app/core/model/export_core_model.dart';
 import 'package:friends_fraternity_app/core/params/export_param.dart';
 import 'package:friends_fraternity_app/core/utills/date_time/date_interval_counter.dart';
+import 'package:friends_fraternity_app/data/export_model.dart';
 
 abstract class TimelineCountingSource {
   int countDueMonth(Params params);

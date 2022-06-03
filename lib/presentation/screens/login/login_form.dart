@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:friends_fraternity_app/core/utills/res/resource.dart';
-import 'package:friends_fraternity_app/presentation/cubit/export_cubit.dart';
-import 'package:friends_fraternity_app/presentation/widget_exporter.dart';
+import 'package:friends_fraternity_app/presentation/export_cubit.dart';
+import 'package:friends_fraternity_app/presentation/export_widget.dart';
 
 class LoginForm extends StatelessWidget {
   @override
