@@ -1,16 +1,26 @@
+import 'package:dartz/dartz.dart';
+import 'package:friends_fraternity_app/core/error/export_error.dart';
 import 'package:friends_fraternity_app/core/params/export_param.dart';
 import 'package:friends_fraternity_app/core/usecase/usecase.dart';
 import 'package:friends_fraternity_app/data/export_model.dart';
 import 'package:friends_fraternity_app/domain/export_repository.dart';
 
 class DepositHistoryUseCase
-    extends BaseUseCaseAsync<EachMonthDepositListModel, Params> {
-  final DepositHistoryRepo _depositHistoryRepo;
+    extends AsyncUsecase<EachMonthDepositListModel, Params> {
+  final DepositHistoryRepo depositHistoryRepo;
+  final MapExceptionToFailure mapExceptionToFailure;
 
-  DepositHistoryUseCase(this._depositHistoryRepo);
+  DepositHistoryUseCase({
+    required this.depositHistoryRepo,
+    required this.mapExceptionToFailure,
+  });
 
   @override
-  Future<EachMonthDepositListModel> call(Params params) async {
-    return await _depositHistoryRepo.getPersonDepositHistory(params);
+  Future<Either<Failure, EachMonthDepositListModel>> call(Params params) async {
+    try {
+      return Right(await depositHistoryRepo.getPersonDepositHistory(params));
+    } catch (e, stacktrace) {
+      return Left(mapExceptionToFailure(e, stacktrace));
+    }
   }
 }
